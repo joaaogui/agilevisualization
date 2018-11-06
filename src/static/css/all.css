@@ -1,0 +1,7 @@
+.tabClass{
+  border-color: rgb(60, 73, 146) rgb(229, 229, 229) transparent !important;
+}
+
+.red{
+  border: red 1px solid !important;
+}

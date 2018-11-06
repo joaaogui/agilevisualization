@@ -1,0 +1,50 @@
+{
+    "name": "AgileVisualization",
+    "version": "0.0.1",
+    "manifest_version": 2,
+    "description": "Adds agile metrics visualization to github ",
+    "homepage_url": "https://github.com/joaaogui/agilevisualization",
+    "author": "João Guilherme",
+    "icons": {
+        "16": "icons/ghrs16.png",
+        "48": "icons/ghrs48.png",
+        "128": "icons/ghrs128.png"
+    },
+    "permissions": [
+        "storage",
+        "activeTab",
+        "webRequest",
+        "webRequestBlocking"
+    ],
+    "background": {
+        "scripts": [
+            "src/background.js"
+        ]
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "*://github.com/*"
+            ],
+            "js": [
+                "src/static/js/jquery-3.3.1.js",
+                "src/static/js/octokit-rest.js",
+                "src/static/js/plotly-latest.min.js",
+                "src/plots.js",
+                "src/inject.js"
+            ],
+            "css": [
+                "src/static/css/all.css"
+            ],
+            "run_at": "document_end"
+        }
+    ],
+    "browser_action": {
+        "default_icon": {
+            "16": "icons/ghrs16.png",
+            "48": "icons/ghrs48.png",
+            "128": "icons/ghrs128.png"
+        },
+        "default_title": "Agile Visualization"
+    }
+}
