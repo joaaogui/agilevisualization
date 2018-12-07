@@ -2,7 +2,7 @@
 
 var repoNav = document.querySelector(".reponav");
 
-agileTab = '<a class="agileTab reponav-item" href="#agilevisualization">'
+agileTab = '<a class="agileTab reponav-item">'
     + "Agile Visualization"
     + '</a>'
 
@@ -31,15 +31,35 @@ $(".agileTab").on("click", function() {
     // Creates the plots divs
 
     var pairingPlot = document.createElement("div");
+    var issuesPlot = document.createElement("div");
     $(pairingPlot).attr('id', 'pairingPlot');
+    $(issuesPlot).attr('id', 'issuesPlot');
 
     $('#pairingPlot').css({
         'width': "100%",
         'height': "60%"
     });
+    $('#issuesPlot').css({
+        'width': "100%",
+        'height': "60%"
+    });
 
     main.appendChild(pairingPlot)
-    drawLinePlot()
+    main.appendChild(issuesPlot)
+
+    var owner = $(".url").text()
+    console.log(owner)
+    // var repo =
+
+    var url = window.location.href
+
+    // console.log(url)
+    url = url.replace('https://github.com/','');
+    // console.log(url)
+    repo = url.replace(owner + '/','');
+    console.log(repo)
+    getCommits(repo, owner);
+    getIssues(repo, owner);
 
 
 });

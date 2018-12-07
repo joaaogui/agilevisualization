@@ -11,6 +11,7 @@
         "128": "icons/ghrs128.png"
     },
     "permissions": [
+        "tabs",
         "storage",
         "activeTab",
         "webRequest",
@@ -30,6 +31,7 @@
                 "src/static/js/jquery-3.3.1.js",
                 "src/static/js/octokit-rest.js",
                 "src/static/js/plotly-latest.min.js",
+                "src/static/js/loadingOverlay.js",
                 "src/plots.js",
                 "src/inject.js"
             ],
