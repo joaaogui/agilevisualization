@@ -31,7 +31,8 @@
                 "src/static/js/jquery-3.3.1.js",
                 "src/static/js/octokit-rest.js",
                 "src/static/js/plotly-latest.min.js",
-                "src/static/js/loadingOverlay.js",
+                "src/static/js/fontawesome.js",
+                "src/static/js/loadingoverlay.min.js",
                 "src/plots.js",
                 "src/inject.js"
             ],

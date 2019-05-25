@@ -1,30 +1,29 @@
 // Gets the navbar element above the code and insert a new tab
 
-var repoNav = document.querySelector(".reponav");
-
-agileTab = '<a class="agileTab reponav-item">'
-    + "Agile Visualization"
+var repoNav = document.querySelector(".hx_reponav");
+agileTab = '<a class="agileTab reponav-item" href="#agile">'
+    + '<svg class="far fa-chart-bar" style="color:darkgrey">'
+    + '</svg>'
+    + '<span> Agile Visualization</span>'
     + '</a>'
 
 repoNav.insertAdjacentHTML('beforeend', agileTab);
 
-// Gets the main area of content 
+// Gets the main area of content
 
 var main = document.querySelector(".repository-content");
+
+// TODO: Code, Issues, Pull Request when clicked, it wont update the bar with the new tab
 
 // Manage the click on the page
 
 $(".agileTab").on("click", function() {
-    console.log("entrou")
-    $('.agileTab').addClass("tabClass")
-    // TODO: Remove selected class from tab
-    // $(".repoNav>span>a.selected").removeClass("selected");
-    // $(".repoNav>a.selected").removeClass("selected");
-    // $(".repoNav>div>a.selected").removeClass("selected");
+        $('.agileTab').addClass("tabClass")
 
-    // $(".new-discussion-timeline").addClass("red")
+    // Removes selected class from tab
+    $("a.reponav-item").removeClass("selected");
+
     // Clean the area for the plot
-
     while (main.firstChild) {
         main.removeChild(main.firstChild);
     }
@@ -57,19 +56,16 @@ $(".agileTab").on("click", function() {
         fontawesomeColor: "#565656"
     });
 
+    // Set the variables
     var owner = $(".url").text()
-    console.log(owner)
-    // var repo =
 
     var url = window.location.href
 
-    // console.log(url)
     url = url.replace('https://github.com/','');
-    // console.log(url)
     repo = url.replace(owner + '/','');
-    console.log(repo)
+    repo = repo.split('/')[0]
     getCommits(repo, owner);
-    getIssues(repo, owner);
+    // getIssues(repo, owner);
 
 
 });

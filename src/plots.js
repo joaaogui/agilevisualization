@@ -25,7 +25,6 @@ function getCommits(repoName, owner) {
     }
 
     paginateCommits(octokit.repos.getCommits).then(data => {
-        console.log(data)
         calculatePair(data, repoName)
         $("#pairingPlot").LoadingOverlay("hide", true);
 
