@@ -25,7 +25,10 @@ function getCommits(repoName, owner) {
     }
 
     paginateCommits(octokit.repos.getCommits).then(data => {
+        console.log(data)
         calculatePair(data, repoName)
+        $("#pairingPlot").LoadingOverlay("hide", true);
+
     })
 }
 
@@ -51,6 +54,7 @@ function getIssues(repoName, owner) {
 
     paginateIssues(octokit.issues.getForRepo).then(data => {
         calculateIssueTime(data, repoName)
+        $("#issuesPlot").LoadingOverlay("hide", true);
     })
 
 }
@@ -89,6 +93,7 @@ function calculateIssueTime(issues, repoName) {
 
 function drawBarPlot(days_open, repoName) {
     ISSUES = document.getElementById('issuesPlot');
+
     Plotly.purge(ISSUES);
 
     var data = [{

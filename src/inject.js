@@ -28,24 +28,34 @@ $(".agileTab").on("click", function() {
     while (main.firstChild) {
         main.removeChild(main.firstChild);
     }
-    // Creates the plots divs
 
+    // Creates the plots divs
     var pairingPlot = document.createElement("div");
     var issuesPlot = document.createElement("div");
+
+    // Set the name of the ids
     $(pairingPlot).attr('id', 'pairingPlot');
     $(issuesPlot).attr('id', 'issuesPlot');
 
-    $('#pairingPlot').css({
-        'width': "100%",
-        'height': "60%"
-    });
-    $('#issuesPlot').css({
-        'width': "100%",
-        'height': "60%"
-    });
-
+    //Append divs to main container
     main.appendChild(pairingPlot)
     main.appendChild(issuesPlot)
+
+    //Sets the css
+    $("#pairingPlot").addClass("size");
+    $("#pairingPlot").LoadingOverlay("show", {
+        background: "rgba(255, 255, 255, 1)",
+        image: "",
+        fontawesome: "fa fa-circle-notch fa-spin",
+        fontawesomeColor: "#565656"    });
+
+    $("#issuesPlot").addClass("size")
+    $("#issuesPlot").LoadingOverlay("show", {
+        background: "rgba(255, 255, 255, 1)",
+        image: "",
+        fontawesome: "fa fa-circle-notch fa-spin",
+        fontawesomeColor: "#565656"
+    });
 
     var owner = $(".url").text()
     console.log(owner)

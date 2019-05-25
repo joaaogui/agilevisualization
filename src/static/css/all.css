@@ -5,3 +5,10 @@
 .red{
   border: red 1px solid !important;
 }
+
+.size{
+  width: 90%;
+  height: 500px;
+  margin: 0 auto;
+
+}
