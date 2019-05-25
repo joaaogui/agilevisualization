@@ -65,7 +65,7 @@ $(".agileTab").on("click", function() {
     repo = url.replace(owner + '/','');
     repo = repo.split('/')[0]
     getCommits(repo, owner);
-    // getIssues(repo, owner);
+    getIssues(repo, owner);
 
 
 });

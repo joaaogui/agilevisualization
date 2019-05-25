@@ -84,10 +84,8 @@ function calculateIssueTime(issues, repoName) {
             all_issues.push(issue);
             days_open[difference] += 1
         }
-
-        drawBarPlot(days_open, repoName)
-
     })
+        drawBarPlot(days_open, repoName)
 }
 
 function drawBarPlot(days_open, repoName) {
