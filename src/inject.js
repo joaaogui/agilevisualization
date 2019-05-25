@@ -17,8 +17,8 @@ var main = document.querySelector(".repository-content");
 
 // Manage the click on the page
 
-$(".agileTab").on("click", function() {
-        $('.agileTab').addClass("tabClass")
+$(".agileTab").on("click", function () {
+    $('.agileTab').addClass("tabClass")
 
     // Removes selected class from tab
     $("a.reponav-item").removeClass("selected");
@@ -46,7 +46,8 @@ $(".agileTab").on("click", function() {
         background: "rgba(255, 255, 255, 1)",
         image: "",
         fontawesome: "fa fa-circle-notch fa-spin",
-        fontawesomeColor: "#565656"    });
+        fontawesomeColor: "#565656"
+    });
 
     $("#issuesPlot").addClass("size")
     $("#issuesPlot").LoadingOverlay("show", {
@@ -61,8 +62,8 @@ $(".agileTab").on("click", function() {
 
     var url = window.location.href
 
-    url = url.replace('https://github.com/','');
-    repo = url.replace(owner + '/','');
+    url = url.replace('https://github.com/', '');
+    repo = url.replace(owner + '/', '');
     repo = repo.split('/')[0]
     getCommits(repo, owner);
     getIssues(repo, owner);
